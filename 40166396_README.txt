@@ -1,0 +1,15 @@
+A Plagiarism detector tool, which takes 2 documents as input, these documents can be of any form and returns 1 if two given documents are plagiarized or 0 is the documents are distinct from each other, in a timely manner.
+
+To check the plagiarism, this tool is using a list of common words to preprocess the data, a word-count method and 2 mathematical algorithms naming Cosine similarity also known as Document distance concept and Jaccard Index.
+
+This tool first reads two files and removes the special characters like new line character such as "\n" as well as converts the characters of files into lower case and also coverts the punctuation into the white space character which is called translation.
+
+For preprocessing of data, it calculates the frequency of each word from files with common words as well as it considers without pre-processed data by checking the occurrence of each word without considering list of common-words.
+
+The first word-count method takes two parameters, which are preprocessed words from file1 and file2, as well as unpreprocessed words from both the files, then it merges the total words of both the files, extracts similar words and calculates the plagiarized word count.
+
+Cosine similarity is a measure of similarity between two non-zero vectors of an inner product space that measures the cosine of the angle between them. Here Document vectors are the frequency of occurrences of words in a given document. Using mathematical formula document distance can be found, Its value is between 0 and 90 degrees. Where 0 degrees denotes precise identity between two documents and 90 degrees denotes significant difference between two documents. This algorithm also works on both preprocessed and unpreprocessed data. After performing cosine similarity, the similarity is given in radian, therefore it must be converted into degree and using the equation of angle transformation degree is mapped with percentage.
+
+The data items are treated like sets by the Jaccard index, also referred to as the Jaccard similarity coefficient. It is determined by dividing the size of the union by the size of the intersection of two sets. Jaccard index is performed on both preprocessed and unpreproceesed data. It gives similarity between 0 and 1, therefore the plagiarism is multiplied by 100.
+
+At last, it calculates the average of combined 6 methods and checks the similarity between documents as per the threshold value 50.50. If the plagiarism is below 50.50 then it is considered to be unique, if similarity is greater than 50.50 then it can be said as plagiarized.
